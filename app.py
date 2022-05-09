@@ -6,7 +6,7 @@ from streamlit_echarts import st_echarts
 
 def main():
 
-    df = pd.read_csv('/Users/laajajmohamed/Documents/smartphones.csv')
+    df = pd.read_csv('smartphones.csv')
     marque1 = df['marque'].sort_values().unique()
     marque2 = df['marque'].sort_values().unique()
 
