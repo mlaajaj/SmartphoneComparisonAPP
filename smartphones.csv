@@ -1,0 +1,58 @@
+marque,modele,Chassis,Keyboard,Pointing Device,Connectivity,Weight,Battery,Display,Games Performance,Application Performance,Temperature,Noise,Audio,Camera,Average,weighted_average,processor,gpu,memory,weight,price,review_date
+realme,C31 (C Series),81%,87%,94%,58%,88%,91%,84%,15%,76%,91%,100%,58%,47%,70%,81%,UNISOC T612 8,ARM Mali-G52 MP1,3072 MB,197 g,139 Euro,05/06/2022
+realme,C35 (C Series),82%,87%,93%,63%,89%,91%,84%,17%,77%,90%,100%,67%,56%,72%,82%,UNISOC T616 8,ARM Mali-G57 MP1,4096 MB,189 g,179 Euro,05/04/2022
+Samsung,Galaxy S22 (Galaxy S Series),92%,92%,93%,94%,91%,89%,91%,91%,99%,94%,100%,81%,79%,83%,92%,Samsung Exynos 2200,Samsung Xclipse 920,8192 MB,167 g,849 Euro,05/03/2022
+realme,GT 2 (GT Series),84%,87%,94%,67%,88%,91%,85%,86%,87%,87%,100%,83%,70%,78%,84%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,12288 MB,199.8 g,550 Euro,05/02/2022
+OnePlus,10 Pro,87%,75%,95%,76%,88%,90%,93%,100%,100%,86%,100%,90%,76%,82%,87%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,12288 MB,200.5 g,999 Euro,04/23/2022
+Google,Pixel 6 Pro (Pixel 6 Series),91%,89%,94%,97%,88%,89%,92%,96%,94%,93%,100%,84%,81%,83%,91%,Google Tensor 8,ARM Mali-G78 MP20,12288 MB,210 g,899 Euro,04/13/2022
+Apple,iPhone SE 2022,83%,88%,94%,69%,93%,89%,90%,93%,100%,88%,100%,79%,64%,80%,83%,Apple A15 Bionic,Apple A15 GPU,4096 MB,144 g,519 Euro,04/13/2022
+Oppo,Find X5 (Find X5 Series),91%,89%,95%,74%,88%,91%,91%,88%,100%,91%,100%,80%,78%,82%,91%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,8192 MB,196 g,999 Euro,04/09/2022
+Nokia,G11 (G Series),82%,87%,93%,63%,89%,92%,83%,15%,74%,87%,100%,80%,49%,72%,82%,UNISOC T606 8,ARM Mali-G57 MP1,3072 MB,190 g,160 Euro,04/06/2022
+Oppo,Find X5 Pro (Find X5 Series),93%,89%,95%,94%,88%,90%,91%,90%,97%,92%,100%,86%,80%,83%,93%,Qualcomm Snapdragon 8,"Qualcomm Adreno 730,",12288 MB,221 g,1299 Euro,04/06/2022
+realme,9i (9 Series),84%,87%,94%,65%,89%,92%,85%,22%,76%,88%,100%,73%,56%,73%,84%,Qualcomm Snapdragon 680,Qualcomm Adreno 610,4096 MB,190 g,220 Euro,04/05/2022
+Motorola,Moto G41 (Moto G Series),84%,88%,92%,68%,90%,91%,90%,25%,65%,90%,100%,91%,62%,74%,84%,Mediatek Helio G85,ARM Mali-G52 MP2,6144 MB,178 g,249 Euro,04/01/2022
+realme,9 Pro (9 Series),83%,87%,92%,65%,88%,92%,85%,52%,82%,86%,100%,67%,61%,74%,83%,Qualcomm Snapdragon 695,Qualcomm Adreno 619,6144 MB,195 g,319 Euro,03/31/2022
+Xiaomi,12 (12 Series),84%,88%,96%,79%,90%,90%,90%,93%,100%,91%,100%,83%,73%,81%,84%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,8192 MB,179 g,-,03/31/2022
+Samsung,Galaxy S22 Ultra 5G (Galaxy S Series),94%,89%,94%,100%,88%,90%,94%,88%,100%,93%,100%,82%,81%,84%,94%,Samsung Exynos 2200,Samsung Xclipse 920,8192 MB,228 g,1249 Euro,03/29/2022
+realme,GT 2 Pro (GT Series),86%,87%,96%,70%,89%,91%,86%,99%,94%,85%,100%,84%,77%,80%,86%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,12288 MB,189 g,850 Euro,03/25/2022
+Huawei,P50 Pro (P50 Series),92%,89%,92%,94%,88%,88%,92%,88%,94%,93%,100%,91%,83%,83%,92%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,8192 MB,195 g,1199 Euro,03/20/2022
+realme,9 Pro Plus (9 Series),84%,87%,94%,67%,90%,91%,88%,64%,100%,84%,100%,79%,67%,78%,84%,MediaTek Dimensity 920,ARM Mali-G68 MP4,6144 MB,182 g,380 Euro,03/19/2022
+OnePlus,Nord CE 2 5G (Nord Series),84%,87%,93%,76%,90%,92%,86%,64%,86%,86%,100%,83%,67%,77%,84%,MediaTek Dimensity 900,ARM Mali-G68 MP4,8192 MB,173 g,349 Euro,03/18/2022
+Xiaomi,12X (12 Series),84%,88%,96%,76%,90%,92%,92%,90%,97%,93%,100%,87%,73%,81%,84%,Qualcomm Snapdragon 870,Qualcomm Adreno 650,8192 MB,176 g,-,03/17/2022
+Motorola,Edge 30 Pro (Edge Series),87%,90%,96%,74%,88%,90%,91%,99%,100%,84%,100%,89%,74%,82%,87%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,12288 MB,196 g,799 Euro,03/15/2022
+Nubia,RedMagic 7 (RedMagic Series),82%,89%,94%,86%,88%,89%,85%,100%,100%,94%,61%,83%,62%,79%,82%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,18432 MB,226 g,799 Euro,03/15/2022
+Huawei,P50 Pocket (P50 Series),84%,87%,92%,89%,89%,80%,91%,94%,95%,93%,100%,87%,78%,81%,84%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,12288 MB,190 g,1599 Euro,03/14/2022
+Nokia,G21 (G Series),82%,87%,93%,65%,89%,92%,83%,18%,77%,85%,100%,80%,60%,73%,82%,UNISOC T606 8,ARM Mali-G57 MP1,4096 MB,190 g,169 Euro,03/09/2022
+Motorola,Moto G51 (Moto G Series),82%,87%,92%,64%,88%,92%,88%,43%,79%,91%,100%,76%,60%,74%,82%,Qualcomm Snapdragon 480,Qualcomm Adreno 619,4096 MB,208 g,229 Euro,02/24/2022
+Sony,Xperia Pro-I (Xperia Series),91%,94%,94%,89%,88%,89%,89%,100%,99%,91%,100%,86%,74%,83%,91%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,12288 MB,211 g,1799 Euro,02/19/2022
+Xiaomi,12 Pro (12 Series),82%,89%,97%,79%,88%,89%,92%,90%,99%,92%,100%,90%,76%,82%,82%,Qualcomm Snapdragon 8,Qualcomm Adreno 730,12288 MB,204 g,-,02/18/2022
+Motorola,Moto G200 5G (Moto G Series),85%,91%,94%,69%,88%,92%,86%,95%,94%,86%,100%,84%,65%,79%,85%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,8192 MB,202 g,450 Euro,02/16/2022
+Samsung,Galaxy M32 (Galaxy M Series),80%,87%,93%,64%,90%,90%,90%,24%,63%,88%,100%,71%,59%,72%,80%,Mediatek Helio G80,ARM Mali-G52 MP2,6144 MB,180 g,290 Euro,02/11/2022
+Samsung,Galaxy S21 FE 5G (Galaxy S Series),89%,89%,97%,95%,90%,89%,90%,96%,94%,92%,100%,82%,74%,82%,89%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,6144 MB,177 g,749 Euro,02/08/2022
+Microsoft,Surface Duo 2 (Surface Duo Series),88%,90%,91%,94%,87%,76%,88%,100%,100%,91%,100%,85%,66%,81%,88%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,8192 MB,284 g,1699 Euro,02/05/2022
+Honor,50 Lite (50 Series),82%,89%,82%,67%,89%,90%,87%,19%,69%,92%,100%,84%,56%,72%,82%,Qualcomm Snapdragon 662,Qualcomm Adreno 610,6144 MB,192 g,300 Euro,02/03/2022
+Vivo,Y52 5G (Y Series),80%,87%,88%,64%,89%,91%,87%,39%,76%,91%,100%,71%,64%,73%,80%,MediaTek Dimensity 700,ARM Mali-G57 MP2,4096 MB,193 g,219 Euro,02/02/2022
+Fairphone,4,85%,87%,91%,67%,88%,90%,87%,45%,90%,84%,100%,71%,65%,75%,85%,Qualcomm Snapdragon 750G,Qualcomm Adreno 619,6144 MB,225 g,580 Euro,02/02/2022
+Xiaomi,Redmi 9C (Redmi 9 Series),79%,87%,92%,50%,88%,91%,83%,8%,47%,91%,100%,56%,53%,67%,79%,Mediatek Helio G35,PowerVR GE8320,4096 MB,196 g,190 Euro,01/31/2022
+realme,C25Y (C Series),81%,87%,93%,56%,88%,91%,81%,25%,72%,86%,100%,44%,48%,68%,81%,UNISOC T610 8,ARM Mali-G52 MP2,4096 MB,200 g,170 Euro,01/21/2022
+Motorola,Moto G31 (Moto G Series),81%,87%,90%,65%,90%,92%,87%,25%,66%,93%,100%,79%,57%,73%,81%,Mediatek Helio G85,ARM Mali-G52 MP2,4096 MB,181 g,200 Euro,01/21/2022
+Xiaomi,Poco M4 Pro 5G (Poco M Series),81%,89%,88%,71%,88%,91%,85%,45%,82%,93%,100%,80%,66%,75%,81%,MediaTek Dimensity 810,"ARM Mali-G57 MP2,",6144 MB,195 g,250 Euro,01/20/2022
+Vivo,Y21s (Y Series),83%,87%,86%,62%,90%,91%,82%,25%,89%,90%,100%,56%,50%,71%,83%,Mediatek Helio G80,ARM Mali-G52 MP2,4096 MB,182 g,189 Euro,01/12/2022
+Samsung,Galaxy M52 5G (Galaxy M Series),85%,89%,92%,69%,90%,91%,89%,82%,85%,88%,100%,81%,64%,78%,85%,Qualcomm Snapdragon 778G,Qualcomm Adreno 642L,6144 MB,173 g,379 Euro,01/02/2022
+Huawei,Nova 9 (Nova Series),86%,88%,95%,74%,90%,89%,89%,80%,90%,93%,100%,87%,64%,79%,86%,Qualcomm Snapdragon 778G,Qualcomm Adreno 642L,8192 MB,175 g,499 Euro,12/30/2021
+Honor,50 (50 Series),86%,88%,95%,73%,90%,91%,87%,82%,93%,92%,100%,88%,62%,79%,86%,Qualcomm Snapdragon 778G,Qualcomm Adreno 642L,8192 MB,175 g,600 Euro,12/27/2021
+Samsung,Galaxy A12 Exynos SM-A127F (Galaxy A Series),78%,88%,88%,58%,88%,91%,83%,15%,55%,93%,100%,76%,50%,70%,78%,Samsung Exynos 850,ARM Mali-G52 MP1,4096 MB,205 g,170 Euro,12/25/2021
+Xiaomi,11 Lite 5G NE (11 Series),86%,89%,93%,77%,92%,90%,92%,83%,90%,94%,100%,86%,65%,80%,86%,Qualcomm Snapdragon 778G,Qualcomm Adreno 642L,8192 MB,158 g,400 Euro,12/22/2021
+Samsung,Galaxy A03s (Galaxy A Series),77%,87%,91%,52%,88%,92%,82%,9%,53%,92%,100%,60%,44%,67%,77%,Mediatek Helio P35,PowerVR GE8320,3072 MB,196 g,160 Euro,12/19/2021
+Xiaomi,Redmi Note 8 2021 (Redmi Note Series),84%,88%,91%,67%,89%,90%,85%,24%,67%,91%,100%,80%,60%,73%,84%,Mediatek Helio G85,ARM Mali-G52 MP2,4076 MB,190 g,180 Euro,12/19/2021
+Xiaomi,11T Pro (11 Series),86%,89%,94%,78%,88%,91%,90%,100%,96%,93%,100%,92%,69%,82%,86%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,8192 MB,204 g,700 Euro,12/17/2021
+Gigaset,GS5 (GS Series),87%,88%,89%,71%,88%,90%,82%,27%,82%,92%,100%,85%,64%,75%,87%,Mediatek Helio G85,ARM Mali-G52 MP2,4096 MB,210 g,299 Euro,12/15/2021
+Samsung,Galaxy M22,80%,87%,94%,66%,89%,92%,88%,24%,68%,89%,100%,76%,57%,73%,80%,Mediatek Helio G80,ARM Mali-G52 MP2,4096 MB,186 g,235 Euro,12/13/2021
+Asus,ROG Phone 5s (ROG Phone Series),85%,89%,99%,100%,87%,89%,90%,100%,100%,90%,100%,89%,71%,84%,85%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,16384 MB,238 g,1099 Euro,12/10/2021
+Motorola,Moto E20 (Moto E Series),80%,87%,87%,55%,89%,90%,84%,15%,75%,94%,100%,69%,42%,70%,80%,UNISOC T606 8,ARM Mali-G57 MP2,2048 MB,184 g,100 Euro,12/09/2021
+Xiaomi,Mix 4,88%,87%,93%,78%,88%,91%,92%,99%,100%,95%,100%,82%,73%,82%,88%,Qualcomm Snapdragon 888,Qualcomm Adreno 660,12288 MB,225 g,-,12/08/2021
+realme,GT Neo 2 (GT Series),82%,87%,94%,72%,88%,91%,85%,91%,93%,88%,100%,84%,67%,79%,82%,Qualcomm Snapdragon 870,Qualcomm Adreno 650,12288 MB,200 g,549 Euro,12/01/2021
+Google,Pixel 6 (Pixel 6 Series),90%,89%,91%,77%,88%,90%,91%,91%,94%,91%,100%,84%,79%,81%,90%,Google Tensor 8,ARM Mali-G78 MP20,8192 MB,207 g,649 Euro,11/30/2021
+Nokia,G50 (G Series),82%,87%,94%,67%,88%,91%,83%,45%,84%,94%,100%,58%,47%,73%,82%,Qualcomm Snapdragon 480,Qualcomm Adreno 619,4096 MB,220 g,280 Euro,11/24/2021
+Motorola,Moto E40 (Moto E Series),82%,86%,92%,58%,88%,91%,85%,29%,71%,93%,100%,67%,48%,71%,82%,UNISOC Tangula T700,ARM Mali-G52 MP2,4096 MB,198 g,140 Euro,11/20/2021
+Motorola,Edge 20 (Edge Series),87%,88%,92%,72%,91%,90%,87%,78%,91%,88%,100%,60%,68%,77%,87%,Qualcomm Snapdragon 778G,Qualcomm Adreno 642L,8192 MB,163 g,499 Euro,11/12/2021
