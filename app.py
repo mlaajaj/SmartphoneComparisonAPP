@@ -1,7 +1,6 @@
 ### Core Pkgs
 
 import streamlit as st
-import names
 import pandas as pd 
 from streamlit_echarts import st_echarts
 
