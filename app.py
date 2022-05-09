@@ -11,10 +11,13 @@ def main():
     marque2 = df['marque'].sort_values().unique()
 
     st.title("Smartphone Comparison APP")
-    st.write("Made by Mohamed LAAJAJ")
-    st.write("")
-    st.write("")
+    st.markdown("**Made by Mohamed LAAJAJ**")
+    st.write("""Toutes les données ont été obtenues à partir du site 'Notebookcheck.net'.  
+    Pour plus d'informations : https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb""") 
+   
+    st.markdown("---")
 
+    st.header('Filtres')
     col1, col2 = st.columns(2)
     with col1:
         m1 = st.selectbox("Marque 1", marque1)
