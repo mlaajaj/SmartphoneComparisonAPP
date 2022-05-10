@@ -85,11 +85,12 @@ st.markdown("""
 """)
 st.markdown('###### Fait par Mohamed LAAJAJ')
 
-st.markdown("""
-> Toutes les données ont été obtenues à partir du site 'Notebookcheck.net'.  
-> Pour plus d'informations ⬇️ :  
-> [Voir projet Github](https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb)
-""")
+
+with st.expander("Plus d'infos sur les données ⬇"):
+    st.write("""
+    Toutes les données de test ont été obtenues à partir du site "Notebookcheck.net".  
+    Pour plus d'informations : [Voir projet Github](https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb)
+    """)
 
 st.markdown("---")
 
@@ -108,8 +109,8 @@ if choice==menu[0]:
         smarphone = df[df['marque']==m1]['modele'].sort_values().unique()
         s1 = st.selectbox("Smartphone 1", smarphone)
     with col2:
-        m2 = st.selectbox("Marque 2", [n for n in marque1 if n!=m1])
-        smarphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
+        m2 = st.selectbox("Marque 2", marque2)
+        smarphone2 = df[(df['marque']==m2) & (df['modele']!=s1)]['modele'].sort_values().unique()
         s2 = st.selectbox("Smartphone 2", smarphone2)
 
     critere = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
@@ -170,7 +171,7 @@ if choice==menu[0]:
         cols.extend(df.columns[16:len(df.columns)])
         data = df[df['modele'].isin(smartphones)][cols]
         data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
-        AgGrid(data)
+        st.table(data)
 
 
 # Choix 2 - Utilisation d'un else car nous avons que deux choix 
@@ -184,4 +185,5 @@ else:
     if bt:
         st.subheader('Top 10 des meilleurs résultats selon vos critères !')
         AgGrid(ranking(criteres,prix))
-       
+        
+
