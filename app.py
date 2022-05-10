@@ -39,9 +39,9 @@ def valeur_list(lst): # Retourn une liste avec avec 'min' ou 'max' en fonction d
     return v 
 
 def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dataframe répondant aux critères de l'utilisateur. Prends en entrée les critères et le filtre des prix
-    cols = ['marque','modele','price']
+    cols = ['marque','modele','review_date','price']
     cols.extend(criteres)
-    criteres = cols[3:]
+    criteres = cols[4:]
 
     # Creation de notre dataframe temporaire
 
@@ -68,7 +68,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
     temp_df['rank'] = dec.rank_
 
     # On retourne notre dataframe avec les 10 meilleurs résultats
-    return temp_df.sort_values('rank').reset_index(drop=True)
+    return temp_df.sort_values('rank')[:10].reset_index(drop=True)
 
 
 #-------------------------------------------------------------------------------
@@ -79,6 +79,14 @@ st.set_page_config(
      layout="wide",
      initial_sidebar_state="expanded",
 )
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 #-----------------------  APPLICATION  ------------------------------------------
 
@@ -101,7 +109,6 @@ with st.expander("Plus d'infos sur les données ⬇"):
 st.markdown("---")
 
 st.header('Filtres')
-
 # Menu
 
 menu = ['Comparer les smartphones', 'Quel smartphones choisir ?']
@@ -139,58 +146,62 @@ if choice==menu[0]:
     values2 = df[df['modele']==s2][critere].values.tolist()[0]
 
     if st.button('Comparer !'):
-
-        st.header('Comparaison')
-        option = {
-            "title": {"text": " "},
-            "tooltip": {
-                "trigger": 'item'
-            },
-            "legend": {"data": [str(s1), str(s2)]},
-            "radar": {
-                "indicator": lst
-            },
-            "series": [
-                {
-                    "name": "",
-                    "type": "radar",
-                        "tooltip": {
-                    "trigger": 'item'},
-                    "data": [
-                        {
-                            "value": [get_int(v) for v in values1],
-                            "name": s1,
-                        },
-                        {
-                            "value": [get_int(v) for v in values2],
-                            "name": s2,
-                        },
-                    ],
-                }
-            ],
-                "emphasis": {
-                    "itemStyle": {
-                        "shadowBlur": 10,
-                        "shadowOffsetX": 0,
-                        "shadowColor": "rgba(0, 0, 0, 0.5)",
-
-                        }
+        if len(critere)>1:
+            st.header('Comparaison')
+            option = {
+                "title": {"text": " "},
+                "tooltip": {
+                    "trigger": 'item'
                 },
-        }            
+                "legend": {"data": [str(s1), str(s2)]},
+                "radar": {
+                    "indicator": lst
+                },
+                "series": [
+                    {
+                        "name": "",
+                        "type": "radar",
+                            "tooltip": {
+                        "trigger": 'item'},
+                        "data": [
+                            {
+                                "value": [get_int(v) for v in values1],
+                                "name": s1,
+                            },
+                            {
+                                "value": [get_int(v) for v in values2],
+                                "name": s2,
+                            },
+                        ],
+                    }
+                ],
+                    "emphasis": {
+                        "itemStyle": {
+                            "shadowBlur": 10,
+                            "shadowOffsetX": 0,
+                            "shadowColor": "rgba(0, 0, 0, 0.5)",
 
-        st_echarts(option, height="600px")
+                            }
+                    },
+            }            
 
-        st.header('Informations techniques')
-        smartphones = [s1, s2]
-        cols = ['marque']
-        cols.extend(df.columns[16:len(df.columns)])
-        data = df[df['modele'].isin(smartphones)][cols]
-        data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
-        st.table(data)
+            st_echarts(option, height="600px")
+
+            st.header('Informations techniques')
+            smartphones = [s1, s2]
+            cols = ['marque']
+            cols.extend(df.columns[16:len(df.columns)])
+            data = df[df['modele'].isin(smartphones)][cols]
+            data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
+            st.table(data)
+        else:
+            st.warning('Veuillez selectionné au moins un critère')
 
 
 # Choix 2 - Utilisation d'un else car nous avons que deux choix 
 else:
+    with st.expander("Plus d'infos ⬇"):
+        st.info("Cet outil permet d'obtenir une liste de smartphones correspondant aux critères définit par l'utilisateur.")
     st.subheader('Zone de filtres')
     criteres = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
     st.write('')
