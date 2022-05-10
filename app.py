@@ -39,19 +39,18 @@ def valeur_list(lst): # Retourn une liste avec avec 'min' ou 'max' en fonction d
     return v 
 
 def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dataframe répondant aux critères de l'utilisateur. Prends en entrée les critères et le filtre des prix
-    cols = ['marque','modele']
+    cols = ['marque','modele','price']
     cols.extend(criteres)
-    cols.append('price')
-    criteres = cols[2:]
+    criteres = cols[3:]
 
     # Creation de notre dataframe temporaire
 
     temp_df = df[cols]
 
-    for element in criteres:
-        if element !='price':
+    for element in cols:
+        if (element !='price') and (element in criteres):
             temp_df[element] = temp_df[element].apply(lambda x:transform(x))
-        else:
+        elif element=='price':
             temp_df[element] = temp_df[element].apply(lambda x:transform_price(x))
 
     temp_df = temp_df[(temp_df['price']>int(montants[0])) & (temp_df['price']<int(montants[1]))]
@@ -69,7 +68,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
     temp_df['rank'] = dec.rank_
 
     # On retourne notre dataframe avec les 10 meilleurs résultats
-    return temp_df.sort_values('rank')[:10].reset_index(drop=True)
+    return temp_df.sort_values('rank').reset_index(drop=True)
 
 
 #-------------------------------------------------------------------------------
@@ -172,7 +171,7 @@ else:
     st.subheader('Zone de filtres')
     criteres = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
     st.write('')
-    prix = st.slider('Choisissez une fourchette de prix', 100.0, 1000.0, (300.0, 600.0))
+    prix = st.slider(label='Choisissez une fourchette de prix', min_value=100, max_value=1000, value=(300, 600), step=50)
     bt = st.button('Lancer la recherche !')
     st.markdown('---')
     if bt:
