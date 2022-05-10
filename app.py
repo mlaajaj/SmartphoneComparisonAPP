@@ -73,6 +73,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
 
 #-------------------------------------------------------------------------------
 
+st.set_option('wideMode',True)
 
 #-----------------------  APPLICATION  ------------------------------------------
 
