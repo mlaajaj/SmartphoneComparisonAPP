@@ -5,5 +5,5 @@ pandas==1.2.5
 scipy==1.6.2
 click==8
 streamlit_echarts==0.4.0
-skcriteria == 0.7
-st_aggrid == 0.2.3
+skcriteria==0.7
+st_aggrid==0.2.3
