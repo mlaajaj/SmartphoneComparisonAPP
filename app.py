@@ -109,9 +109,18 @@ if choice==menu[0]:
         smarphone = df[df['marque']==m1]['modele'].sort_values().unique()
         s1 = st.selectbox("Smartphone 1", smarphone)
     with col2:
-        m2 = st.selectbox("Marque 2", marque2)
-        smarphone2 = df[(df['marque']==m2) & (df['modele']!=s1)]['modele'].sort_values().unique()
-        s2 = st.selectbox("Smartphone 2", smarphone2)
+        # Condition pour ne pas choisir le même téléphone et ne pas avoir d'erreur...
+        # Ainsi, si la marque dispose de +2 téléphones différents, la liste contenant 
+        # tous les smartphones de la marque moins celui selectionné précédemment devrait être supérieur à 0
+        # Sinon, on change complétement de marque.
+        contrainte = df[(df['marque']==m1) & (df['modele']!=s1)]['modele'].sort_values().unique() 
+        if len(contrainte)>0:
+            m2 = st.selectbox("Marque 2", marque2)
+            s2 = st.selectbox("Smartphone 2", contrainte)
+        else:
+            m2 = st.selectbox("Marque 2", [n for n in marque1 if n!=m1])
+            smarphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
+            s2 = st.selectbox("Smartphone 2", smarphone2)
 
     critere = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
 
