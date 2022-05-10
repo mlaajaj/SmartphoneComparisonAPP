@@ -72,13 +72,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
 
 
 #-------------------------------------------------------------------------------
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden; }
-        footer {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 
 #-----------------------  APPLICATION  ------------------------------------------
 
@@ -86,10 +80,16 @@ df = pd.read_csv('smartphones.csv')
 marque1 = df['marque'].sort_values().unique()
 marque2 = df['marque'].sort_values().unique()
 
-st.title("Smartphone Comparison APP")
-st.markdown("**Fait par Mohamed LAAJAJ**")
-st.write("""Toutes les données ont été obtenues à partir du site 'Notebookcheck.net'.  
-Pour plus d'informations : https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb""") 
+st.markdown("""
+# Smartphone Comparison APP
+""")
+st.markdown('###### Fait par Mohamed LAAJAJ')
+
+st.markdown("""
+> Toutes les données ont été obtenues à partir du site 'Notebookcheck.net'.  
+> Pour plus d'informations ⬇️ :  
+> [Voir projet Github](https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb)
+""")
 
 st.markdown("---")
 
@@ -170,7 +170,7 @@ if choice==menu[0]:
         cols.extend(df.columns[16:len(df.columns)])
         data = df[df['modele'].isin(smartphones)][cols]
         data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
-        st.dataframe(data)
+        AgGrid(data)
 
 
 # Choix 2 - Utilisation d'un else car nous avons que deux choix 
@@ -184,5 +184,4 @@ else:
     if bt:
         st.subheader('Top 10 des meilleurs résultats selon vos critères !')
         AgGrid(ranking(criteres,prix))
-        
-
+       
