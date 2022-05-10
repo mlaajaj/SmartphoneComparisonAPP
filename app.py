@@ -72,6 +72,13 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
 
 
 #-------------------------------------------------------------------------------
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden; }
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 #-----------------------  APPLICATION  ------------------------------------------
 
@@ -177,3 +184,5 @@ else:
     if bt:
         st.subheader('Top 10 des meilleurs résultats selon vos critères !')
         AgGrid(ranking(criteres,prix))
+        
+
