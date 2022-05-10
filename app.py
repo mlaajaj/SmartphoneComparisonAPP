@@ -76,7 +76,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
 
 #-----------------------  APPLICATION  ------------------------------------------
 
-df = pd.read_csv('/Users/laajajmohamed/Documents/smartphones.csv')
+df = pd.read_csv('smartphones.csv')
 marque1 = df['marque'].sort_values().unique()
 marque2 = df['marque'].sort_values().unique()
 
