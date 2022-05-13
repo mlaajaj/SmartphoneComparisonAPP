@@ -146,7 +146,7 @@ if choice==menu[0]:
     values2 = df[df['modele']==s2][critere].values.tolist()[0]
 
     if st.button('Comparer !'):
-        if len(critere)>1:
+        if len(critere)>2:
             st.header('Comparaison')
             option = {
                 "title": {"text": " "},
@@ -195,7 +195,7 @@ if choice==menu[0]:
             data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
             st.table(data)
         else:
-            st.warning('Veuillez selectionné au moins un critère')
+            st.warning('Veuillez selectionner au moins trois critères')
 
 
 # Choix 2 - Utilisation d'un else car nous avons que deux choix 
