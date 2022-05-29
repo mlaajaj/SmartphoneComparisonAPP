@@ -16,7 +16,7 @@ Cette application utilise Streamlit, une bibliothèque open-source qui permet de
 
 Les données utilisées ont été récupérés à partir du site internet [Notebookcheck](https://www.notebookcheck.net) à l'aide de Python.   
 Pour plus d'informations sur la récupération des données voir ⬇️ :  
-[Récupération des données](https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb) 
+[Récupération des données](https://github.com/mlaajaj/Smartphone_Reviews_Scrap) 
 
 L'application permet:
 - A partir des données récupérées de comparer deux smartphones avec les critères de notation du site source. 
