@@ -3,7 +3,7 @@
 ![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) 
 ![Streamlit](https://img.shields.io/badge/Streamlit-Library-orange.svg)
 
-Lien vers l'application : [Cliquez-ici](https://share.streamlit.io/mlaajaj/smartphone_comparison_app/main/app.py)
+Lien vers l'application : [Cliquez-ici](https://share.streamlit.io/mlaajaj/smartphonecomparisonapp/main/app.py)
 
 ## A propos de cette application
 
