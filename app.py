@@ -136,12 +136,12 @@ if choice==menu[0]:
         if len(not_same_condition )>0:
             m2 = st.selectbox("Marque 2", marque2)
             smartphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
-            s2 = st.selectbox("Smartphone 1", smartphone2)
+            s2 = st.selectbox("Smartphone 2", smartphone2)
         else:
             marque2 = df[df['marque']!=m1]['marque'].sort_values().unique()
             m2 = st.selectbox("Marque 2", marque2)
             smartphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
-            s2 = st.selectbox("Smartphone 1", smartphone2)
+            s2 = st.selectbox("Smartphone 2", smartphone2)
             
 
     critere = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
