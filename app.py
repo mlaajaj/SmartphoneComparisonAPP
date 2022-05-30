@@ -38,7 +38,7 @@ def valeur_list(lst): # Retourn une liste avec avec 'min' ou 'max' en fonction d
             v.append('min')
     return v 
 
-def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dataframe répondant aux critères de l'utilisateur. Prends en entrée les critères et le filtre des prix
+def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dataframe répondant aux critères de l'utilisateur. Prends en entrée les critères (list) et le filtre des prix (tuple)
     cols = ['marque','modele','review_date','price']
     cols.extend(criteres)
     criteres = cols[4:]
@@ -71,7 +71,7 @@ def ranking(criteres, montants): # Notre fonction de ranking qui retourne un dat
     return temp_df.sort_values('rank')[:10].reset_index(drop=True)
 
 
-#-------------------------------------------------------------------------------
+#-----------------------  AFFICHAGE ----------------------------------------------
 
 st.set_page_config(
      page_title="Smartphone Comparison APP",
@@ -88,12 +88,16 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-#-----------------------  APPLICATION  ------------------------------------------
+
+#-----------------------  DONNEES  ------------------------------------------
 
 df = pd.read_csv('smartphones.csv')
 marque1 = df['marque'].sort_values().unique()
 marque2 = df['marque'].sort_values().unique()
 
+
+
+#-----------------------  APPLICATION  ------------------------------------------
 st.markdown("""
 # Smartphone Comparison APP
 """)
@@ -111,7 +115,7 @@ st.markdown("---")
 st.header('Filtres')
 # Menu
 
-menu = ['Comparer les smartphones', 'Quel smartphones choisir ?']
+menu = ['Comparer les smartphones', 'Quel smartphone choisir ?']
 choice = st.sidebar.selectbox('Menu', menu)
 
 # Choix 1 
@@ -119,21 +123,26 @@ if choice==menu[0]:
     col1, col2 = st.columns(2)
     with col1:
         m1 = st.selectbox("Marque 1", marque1)
-        smarphone = df[df['marque']==m1]['modele'].sort_values().unique()
-        s1 = st.selectbox("Smartphone 1", smarphone)
+        smartphone = df[df['marque']==m1]['modele'].sort_values().unique()
+        s1 = st.selectbox("Smartphone 1", smartphone)
     with col2:
         # Condition pour ne pas choisir le même téléphone et ne pas avoir d'erreur...
         # Ainsi, si la marque dispose de +2 téléphones différents, la liste contenant 
         # tous les smartphones de la marque moins celui selectionné précédemment devrait être supérieur à 0
         # Sinon, on change complétement de marque.
-        contrainte = df[(df['marque']==m1) & (df['modele']!=s1)]['modele'].sort_values().unique() 
-        if len(contrainte)>0:
+        not_same_condition = list(smartphone)
+        not_same_condition .remove(s1)
+        
+        if len(not_same_condition )>0:
             m2 = st.selectbox("Marque 2", marque2)
-            s2 = st.selectbox("Smartphone 2", contrainte)
+            smartphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
+            s2 = st.selectbox("Smartphone 1", smartphone2)
         else:
-            m2 = st.selectbox("Marque 2", [n for n in marque1 if n!=m1])
-            smarphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
-            s2 = st.selectbox("Smartphone 2", smarphone2)
+            marque2 = df[df['marque']!=m1]['marque'].sort_values().unique()
+            m2 = st.selectbox("Marque 2", marque2)
+            smartphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
+            s2 = st.selectbox("Smartphone 1", smartphone2)
+            
 
     critere = st.multiselect("Quels critères ?", sorted(df.columns.to_list()[2:15]))
 
@@ -144,8 +153,12 @@ if choice==menu[0]:
 
     values1 = df[df['modele']==s1][critere].values.tolist()[0]
     values2 = df[df['modele']==s2][critere].values.tolist()[0]
+    
+    if "load_state" not in st.session_state:
+        st.session_state.load_state = False
 
-    if st.button('Comparer !'):
+    if st.button('Comparer !') or st.session_state.load_state:
+        st.session_state.load_state = True
         if len(critere)>2:
             st.header('Comparaison')
             option = {
@@ -192,7 +205,7 @@ if choice==menu[0]:
             cols = ['marque']
             cols.extend(df.columns[16:len(df.columns)])
             data = df[df['modele'].isin(smartphones)][cols]
-            data = data.T.rename(columns={data.T.columns[1]:s2, data.T.columns[0]:s1})
+            data = data.T.rename(columns={data.T.columns[0]:s2, data.T.columns[1]:s1})
             st.table(data)
         else:
             st.warning('Veuillez selectionner au moins trois critères')
@@ -208,7 +221,12 @@ else:
     prix = st.slider(label='Choisissez une fourchette de prix', min_value=100, max_value=1000, value=(300, 600), step=50)
     bt = st.button('Lancer la recherche !')
     st.markdown('---')
-    if bt:
+    
+    if "load_state" not in st.session_state:
+        st.session_state.load_state = False
+
+    if bt or st.session_state.load_state:
+        st.session_state.load_state = True
         st.subheader('Top 10 des meilleurs résultats selon vos critères !')
         AgGrid(ranking(criteres,prix))
         
