@@ -131,11 +131,11 @@ if choice==menu[0]:
         # tous les smartphones de la marque moins celui selectionné précédemment devrait être supérieur à 0
         # Sinon, on change complétement de marque.
         not_same_condition = list(smartphone)
-        not_same_condition .remove(s1)
+        not_same_condition.remove(s1)
         
         if len(not_same_condition )>0:
             m2 = st.selectbox("Marque 2", marque2)
-            smartphone2 = df[df['marque']==m2]['modele'].sort_values().unique()
+            smartphone2 = df[(df['marque']==m2) & (df['modele']!=s1) ]['modele'].sort_values().unique()
             s2 = st.selectbox("Smartphone 2", smartphone2)
         else:
             marque2 = df[df['marque']!=m1]['marque'].sort_values().unique()
